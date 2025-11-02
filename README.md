@@ -2,6 +2,9 @@
 
 Below are some Automated Test Case samples that I wrote while I was working on previous projects.
 
+
+----------------------------------------------------------------
+
 describe('Login tests', () => {
 
   it('Login cu user sau parola gresita - arata eroare', () => {
