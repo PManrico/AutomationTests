@@ -7,7 +7,7 @@ Below are some Automated Test Case samples that I wrote while I was working on p
 
 describe('Login tests', () => {
 
-  it('Login cu user sau parola gresita - arata eroare', () => {
+    it('Login cu user sau parola gresita - arata eroare', () => {
     cy.visit('https://www.saucedemo.com/');
     cy.get('#user-name').type('usergresit');
     cy.get('#password').type('parolagresita');
