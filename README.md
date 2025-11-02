@@ -15,7 +15,7 @@ describe('Login tests', () => {
     cy.get('[data-test="error"]').should('contain', 'Epic sadface');
   });
 
-  it('Login cu userul standard - succes', () => {
+    it('Login cu userul standard - succes', () => {
     cy.visit('https://www.saucedemo.com/');
     cy.get('#user-name').type('standard_user');
     cy.get('#password').type('secret_sauce');
@@ -31,14 +31,14 @@ describe('Login tests', () => {
 
 describe('Logout test', () => {
 
-  beforeEach(() => {
+    beforeEach(() => {
     cy.visit('https://www.saucedemo.com/');
     cy.get('#user-name').type('standard_user');
     cy.get('#password').type('secret_sauce');
     cy.get('#login-button').click();
   });
 
-  it('Logout dupa login', () => {
+    it('Logout dupa login', () => {
     cy.get('#react-burger-menu-btn').click();
     cy.get('#logout_sidebar_link').click();
     cy.url().should('eq', 'https://www.saucedemo.com/');
@@ -52,14 +52,14 @@ describe('Logout test', () => {
 
 describe('Meniu lateral', () => {
 
-  beforeEach(() => {
+    beforeEach(() => {
     cy.visit('https://www.saucedemo.com/');
     cy.get('#user-name').type('standard_user');
     cy.get('#password').type('secret_sauce');
     cy.get('#login-button').click();
   });
 
-  it('Deschidere si inchidere meniu lateral', () => {
+    it('Deschidere si inchidere meniu lateral', () => {
     cy.get('#react-burger-menu-btn').click();
     cy.get('.bm-menu-wrap').should('be.visible');
     cy.get('#react-burger-cross-btn').click();
@@ -74,19 +74,19 @@ describe('Meniu lateral', () => {
 
 describe('Cart tests', () => {
 
-  beforeEach(() => {
+    beforeEach(() => {
     cy.visit('https://www.saucedemo.com/');
     cy.get('#user-name').type('standard_user');
     cy.get('#password').type('secret_sauce');
     cy.get('#login-button').click();
   });
 
-  it('Adaugare produs in cart', () => {
+    it('Adaugare produs in cart', () => {
     cy.get('#add-to-cart-sauce-labs-backpack').click();
     cy.get('.shopping_cart_badge').should('have.text', '1');
   });
 
-  it('Stergere produs din cart', () => {
+    it('Stergere produs din cart', () => {
     cy.get('#add-to-cart-sauce-labs-backpack').click();
     cy.get('.shopping_cart_link').click();
     cy.get('#remove-sauce-labs-backpack').click();
@@ -102,14 +102,14 @@ describe('Cart tests', () => {
 
 describe('Checkout test', () => {
 
-  beforeEach(() => {
+    beforeEach(() => {
     cy.visit('https://www.saucedemo.com/');
     cy.get('#user-name').type('standard_user');
     cy.get('#password').type('secret_sauce');
     cy.get('#login-button').click();
   });
 
-  it('Plasare comanda cu succes', () => {
+    it('Plasare comanda cu succes', () => {
     cy.get('#add-to-cart-sauce-labs-backpack').click();
     cy.get('.shopping_cart_link').click();
     cy.get('#checkout').click();
@@ -129,19 +129,19 @@ describe('Checkout test', () => {
 
 describe('Product page tests', () => {
 
-  beforeEach(() => {
+    beforeEach(() => {
     cy.visit('https://www.saucedemo.com/');
     cy.get('#user-name').type('standard_user');
     cy.get('#password').type('secret_sauce');
     cy.get('#login-button').click();
   });
 
-  it('Accesare pagina detalii produs', () => {
+    it('Accesare pagina detalii produs', () => {
     cy.get('.inventory_item_name').first().click();
     cy.url().should('include', 'inventory-item.html');
   });
 
-  it('Buton Back to products revine la pagina principala', () => {
+    it('Buton Back to products revine la pagina principala', () => {
     cy.get('.inventory_item_name').first().click();
     cy.get('#back-to-products').click();
     cy.url().should('include', 'inventory.html');
