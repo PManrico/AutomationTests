@@ -1,4 +1,4 @@
-# AutomationTests
+# Automation-Test-Case
 
 Below are some Automated Test Case samples that I wrote while I was working on previous projects.
 
